@@ -1,3 +1,11 @@
+# 爱彼迎接口文档
+
+https://documenter.getpostman.com/view/12387168/2s7YfKDwcn
+home
+折扣优惠
+http://codercba.com:1888/airbnb/api/home/discount
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
