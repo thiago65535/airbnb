@@ -5,17 +5,22 @@ import { HomeWrapper } from "./style";
 import HomeBanner from "./c-cpns/home-banner";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { fetchGoodPriceInfoAction } from "@/store/modules/home";
-import SectionHeader from "@/components/section-header";
-import SectionRooms from "@/components/section-rooms";
+import HomeSectionV1 from "./c-cpns/home-section-v1";
+
+import HomeSectionV2 from "./c-cpns/home-section-v2";
+import { isEmptyO } from "@/utils";
 const Home = memo(() => {
-  const { goodPriceInfo } = useSelector(
+  const { goodPriceInfo, highScoreInfo, discountInfo,hotRecommendInfo } = useSelector(
     (state) => ({
       goodPriceInfo: state.home.goodPriceInfo,
+      highScoreInfo: state.home.highScoreInfo,
+      discountInfo: state.home.discountInfo,
+      hotRecommendInfo:state.home.hotRecommendInfo
     }),
     shallowEqual
   );
-
-  const dispatch = useDispatch();
+  console.log(highScoreInfo)
+  const dispatch = useDispatch(); 
   useEffect(() => {
     dispatch(fetchGoodPriceInfoAction());
   }, [dispatch]);
@@ -24,10 +29,10 @@ const Home = memo(() => {
     <HomeWrapper>
       <HomeBanner />
       <div className="content">
-        <div className="good-price">
-          <SectionHeader title={goodPriceInfo.title}></SectionHeader>
-          <SectionRooms roomList={goodPriceInfo.list} />
-        </div>
+        {isEmptyO(discountInfo) && <HomeSectionV2 infoData={discountInfo} />}
+        {isEmptyO(hotRecommendInfo) && <HomeSectionV2 infoData={hotRecommendInfo} />} 
+        {isEmptyO(goodPriceInfo) && <HomeSectionV1 infoData={goodPriceInfo} />} 
+        {isEmptyO(highScoreInfo) && <HomeSectionV1 infoData={highScoreInfo} />}
       </div>
 
       <Button type="primary">Button</Button>
