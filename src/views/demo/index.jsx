@@ -1,4 +1,4 @@
-import Indicator from "@/base-ui/scroll-view/indicator";
+import Indicator from "@/base-ui/indicator";
 import PropTypes from "prop-types";
 import React, { memo, useState } from "react";
 import { DemoWrapper } from "./style";

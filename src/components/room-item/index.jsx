@@ -5,7 +5,7 @@ import { Rating } from "@mui/material";
 import { Carousel } from "antd";
 import IconArrowLeft from "@/assets/svg/icon-arrow-left";
 import IconArrowRight from "@/assets/svg/icon-arrow-right";
-import Indicator from "@/base-ui/scroll-view/indicator";
+import Indicator from "@/base-ui/indicator";
 import classNames from "classnames";
 const RoomItem = memo((props) => {
   const sliderRef = useRef();

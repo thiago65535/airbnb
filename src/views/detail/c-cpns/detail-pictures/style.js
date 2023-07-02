@@ -59,7 +59,11 @@ export const DetailPictureWrapper = styled.div`
         box-sizing: border-box;
         border: 1px solid #000;
       }
-      .show-btn {
+   
+    }
+  }
+
+  .show-btn {
         position: absolute;
         z-index: 99;
         right: 15px;
@@ -70,6 +74,4 @@ export const DetailPictureWrapper = styled.div`
         background-color: #fff;
         cursor: pointer;
       }
-    }
-  }
 `;
