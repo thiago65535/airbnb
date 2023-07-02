@@ -27,6 +27,66 @@ export const RoomItemWrapper = styled.li`
     }
   }
 
+  .slider{
+    position: relative;
+    &:hover{
+      .control{
+        display: flex;
+      }
+    }
+    .control{
+      position: absolute;
+      z-index: 1;
+      top:0;
+      left:0;
+      bottom: 0;
+      right:0;
+      justify-content: space-between;
+      color:#fff;
+      display: none;
+     .btn{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 83px;
+      height: 100%;
+      background:linear-gradient(to left,transparent 0,rgba(0,0,0.75) 100%);
+
+      &.right{
+        background:linear-gradient(to right,transparent 0,rgba(0,0,0.75) 100%);
+      }
+     }
+    }
+
+    .indicator{
+      position: absolute;
+      bottom: 10px;
+      left:0;
+      right:0;
+      width: 30%;
+      z-index: 9;
+      margin: 0 auto;
+      .dot-item{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 14.29%;
+        .dot{
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: #fff;
+        &.active{
+          width: 8px;
+          height: 8px;
+          background-color: red;
+        }
+
+      }
+      }
+     
+    }
+  }
   .desc {
     margin: 10px 0 5px;
     font-size: 12px;
